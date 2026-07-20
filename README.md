@@ -116,14 +116,6 @@ Since practice makes perfect, I went past the two-exploit minimum and tried a fe
 
   ![vsFTPd exploit against the Web Server](images/14-extra-vsftpd-webserver.jpeg)
 
-- Attempted a newer CVE (Ivanti Connect Secure RCE, CVE-2024-37404) against the environment — this one didn't land, which was a useful reminder that not every published exploit applies to every target.
-
-  ![Attempted Ivanti Connect Secure exploit](images/15-extra-ivanti-attempt.jpeg)
-
-- Tried a couple of additional Netcat connections on other ports to see what else might be listening.
-
-  ![Additional Netcat connection attempts](images/16-extra-netcat-attempts.jpeg)
-
 ### Step 8: Establishing Persistence — Backdoor Account
 
 To prove the takeover wasn't a one-time fluke, I used my root access on the Production Server to plant a custom backdoor account with `useradd -ou 0 -g 0`, giving it UID/GID `0` so it carried full root privileges, then set its password with `passwd`.
