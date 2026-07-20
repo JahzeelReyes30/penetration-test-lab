@@ -38,7 +38,11 @@ A hands-on cybersecurity simulation where I was brought on as a **Penetration Te
 
 ### Step 1: Reconnaissance — Scanning the Production Server
 
-From Kali Linux, I ran an Nmap scan against the Production Server (`192.168.0.18`) to enumerate open ports and running services before doing any vulnerability research.
+From Kali Linux, I ran an Nmap version-detection scan against the Production Server (`192.168.0.18`) with the `vuln` script set enabled, and saved the output to a file for documentation:
+
+```bash
+sudo nmap -sV 192.168.0.18 --script vuln > productionscan.txt
+```
 
 ![Nmap scan of the Production Server](images/02-nmap-production-scan.jpeg)
 
